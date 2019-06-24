@@ -30,7 +30,7 @@ class DraftsPage extends Component {
               key={draft.id}
               post={draft}
               refresh={() => this.props.draftsQuery.refetch()}
-              isDraft={!draft.isPublished}
+              isDraft={!draft.published}
             />
           ))}
         {this.props.children}
@@ -45,7 +45,7 @@ const DRAFTS_QUERY = gql`
       id
       text
       title
-      isPublished
+      published
       author {
         name
       }

@@ -16,7 +16,7 @@ var models = [
 exports.Prisma = prisma_lib_1.makePrismaClientClass({
   typeDefs,
   models,
-  endpoint: `__PRISMA_ENDPOINT__`
+  endpoint: `https://us1.prisma.sh/public-brownsnapper-74/login17/dev`
 });
 exports.prisma = new exports.Prisma();
 var models = [

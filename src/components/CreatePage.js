@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { graphql } from 'react-apollo'
-import  { gql } from 'apollo-boost'
+import { gql } from 'apollo-boost'
 
 class CreatePage extends Component {
   state = {
@@ -28,13 +28,13 @@ class CreatePage extends Component {
             onChange={e => this.setState({ text: e.target.value })}
             placeholder="Content"
             rows={8}
-            value={this.state.text}
+            value={this.state.content}
           />
           <input
-            className={`pa3 bg-black-10 bn ${this.state.text &&
+            className={`pa3 bg-black-10 bn ${this.state.content &&
               this.state.title &&
               'dim pointer'}`}
-            disabled={!this.state.text || !this.state.title}
+            disabled={!this.state.content || !this.state.title}
             type="submit"
             value="Create"
           />
@@ -61,7 +61,7 @@ const CREATE_DRAFT_MUTATION = gql`
     createDraft(title: $title, text: $text) {
       id
       title
-      text
+      content
     }
   }
 `
